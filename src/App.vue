@@ -5,18 +5,29 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <h1>{{name}}, {{age}}</h1>
+    <h2>{{other}}</h2>
     <router-view/>
     当前number是: {{number}}
   </div>
 </template>
 
 <script>
+import {mapGetters, mapMutations, mapActions} from 'vuex';
+
   export default {
     name: 'App',
     data() {
       return {
         number: 0
       }
+    },
+    computed: {
+        ...mapGetters([
+            "name",
+            "age",
+            "other"
+        ])
     },
     methods: {
       handleAddCallback(num) {

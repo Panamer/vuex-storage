@@ -1,22 +1,16 @@
 <template>
   <div class="hello">
-    <h1>{{name}}, {{age}}</h1>
-    <h2>{{other}}</h2>
+    <!-- <h1>{{name}}, {{age}}</h1>
+    <h2>{{other}}</h2> -->
     <button @click="handleClick">commit</button>
   </div>
 </template>
 
 <script>
-  import {mapGetters, mapMutations, mapActions} from 'vuex';
+import {mapGetters, mapMutations, mapActions} from 'vuex';
 
   export default {
-      computed: {
-          ...mapGetters([
-              "name",
-              "age",
-              "other"
-          ])
-      },
+
       methods: {
           handleClick() {
             this.setName("Marry");
